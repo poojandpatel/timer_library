@@ -1,12 +1,22 @@
+package poojan_patel_intern_project;
 
-public class JUnitTestTimer {
+import static org.junit.jupiter.api.Assertions.*;
 
-	public static void main(String[] args) {
-		Timer one = new Timer(23,59,59,true);
-		System.out.println("original time set is " + one.getHour() + ":" + one.getMinutes()+  ":" + one.getSeconds());
-		one.incrementSeconds();
-		System.out.println(one.getHour() + ":" + one.getMinutes()+  ":" + one.getSeconds());
+import org.junit.Before;
+import org.junit.jupiter.api.Test;
 
+class JUnitTest_MilitaryTimer {
+
+	Timer timer;
+	@Before 
+	public void init() {
+		timer = new Timer(true);
+	}
+	
+	@Test
+	void testSetHour() {
+		timer.setHour(24);
+		assertEquals(0, timer.getHour());
 	}
 
 }
